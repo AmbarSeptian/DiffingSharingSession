@@ -7,26 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E551B5D524464C4E003CF2D7 /* DiffingAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E551B5D424464C4E003CF2D7 /* DiffingAlgorithmTests.swift */; };
 		E5A797AE2441FBDB00A63AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */; };
-		E5A797B02441FBDB00A63AC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797AF2441FBDB00A63AC7 /* SceneDelegate.swift */; };
 		E5A797B22441FBDB00A63AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797B12441FBDB00A63AC7 /* ViewController.swift */; };
-		E5A797B52441FBDB00A63AC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A797B32441FBDB00A63AC7 /* Main.storyboard */; };
 		E5A797B72441FBDC00A63AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A797B62441FBDC00A63AC7 /* Assets.xcassets */; };
 		E5A797BA2441FBDC00A63AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A797B82441FBDC00A63AC7 /* LaunchScreen.storyboard */; };
+		E5A797C22441FC2B00A63AC7 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797C12441FC2B00A63AC7 /* Diff.swift */; };
+		E5A797C42441FC4900A63AC7 /* AnyDiffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797C32441FC4900A63AC7 /* AnyDiffable.swift */; };
+		E5A797C62441FC6600A63AC7 /* Array+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797C52441FC6600A63AC7 /* Array+Diff.swift */; };
+		E5A797C82441FC8D00A63AC7 /* UICollectionVIew+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797C72441FC8D00A63AC7 /* UICollectionVIew+Diff.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E551B5D724464C4E003CF2D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5A797A22441FBDB00A63AC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5A797A92441FBDB00A63AC7;
+			remoteInfo = DiffingAlgorithm;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		E551B5D224464C4E003CF2D7 /* DiffingAlgorithmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DiffingAlgorithmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E551B5D424464C4E003CF2D7 /* DiffingAlgorithmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffingAlgorithmTests.swift; sourceTree = "<group>"; };
+		E551B5D624464C4E003CF2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A797AA2441FBDB00A63AC7 /* DiffingAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiffingAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5A797AF2441FBDB00A63AC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E5A797B12441FBDB00A63AC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5A797B42441FBDB00A63AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5A797B62441FBDC00A63AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5A797B92441FBDC00A63AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5A797BB2441FBDC00A63AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5A797C12441FC2B00A63AC7 /* Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diff.swift; sourceTree = "<group>"; };
+		E5A797C32441FC4900A63AC7 /* AnyDiffable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDiffable.swift; sourceTree = "<group>"; };
+		E5A797C52441FC6600A63AC7 /* Array+Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Diff.swift"; sourceTree = "<group>"; };
+		E5A797C72441FC8D00A63AC7 /* UICollectionVIew+Diff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionVIew+Diff.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E551B5CF24464C4E003CF2D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5A797A72441FBDB00A63AC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +62,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E551B5D324464C4E003CF2D7 /* DiffingAlgorithmTests */ = {
+			isa = PBXGroup;
+			children = (
+				E551B5D424464C4E003CF2D7 /* DiffingAlgorithmTests.swift */,
+				E551B5D624464C4E003CF2D7 /* Info.plist */,
+			);
+			path = DiffingAlgorithmTests;
+			sourceTree = "<group>";
+		};
 		E5A797A12441FBDB00A63AC7 = {
 			isa = PBXGroup;
 			children = (
 				E5A797AC2441FBDB00A63AC7 /* DiffingAlgorithm */,
+				E551B5D324464C4E003CF2D7 /* DiffingAlgorithmTests */,
 				E5A797AB2441FBDB00A63AC7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E5A797AA2441FBDB00A63AC7 /* DiffingAlgorithm.app */,
+				E551B5D224464C4E003CF2D7 /* DiffingAlgorithmTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -57,9 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */,
-				E5A797AF2441FBDB00A63AC7 /* SceneDelegate.swift */,
+				E5A797C92441FC9700A63AC7 /* Diff */,
 				E5A797B12441FBDB00A63AC7 /* ViewController.swift */,
-				E5A797B32441FBDB00A63AC7 /* Main.storyboard */,
 				E5A797B62441FBDC00A63AC7 /* Assets.xcassets */,
 				E5A797B82441FBDC00A63AC7 /* LaunchScreen.storyboard */,
 				E5A797BB2441FBDC00A63AC7 /* Info.plist */,
@@ -67,9 +102,38 @@
 			path = DiffingAlgorithm;
 			sourceTree = "<group>";
 		};
+		E5A797C92441FC9700A63AC7 /* Diff */ = {
+			isa = PBXGroup;
+			children = (
+				E5A797C12441FC2B00A63AC7 /* Diff.swift */,
+				E5A797C32441FC4900A63AC7 /* AnyDiffable.swift */,
+				E5A797C52441FC6600A63AC7 /* Array+Diff.swift */,
+				E5A797C72441FC8D00A63AC7 /* UICollectionVIew+Diff.swift */,
+			);
+			path = Diff;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E551B5D124464C4E003CF2D7 /* DiffingAlgorithmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E551B5DB24464C4E003CF2D7 /* Build configuration list for PBXNativeTarget "DiffingAlgorithmTests" */;
+			buildPhases = (
+				E551B5CE24464C4E003CF2D7 /* Sources */,
+				E551B5CF24464C4E003CF2D7 /* Frameworks */,
+				E551B5D024464C4E003CF2D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E551B5D824464C4E003CF2D7 /* PBXTargetDependency */,
+			);
+			name = DiffingAlgorithmTests;
+			productName = DiffingAlgorithmTests;
+			productReference = E551B5D224464C4E003CF2D7 /* DiffingAlgorithmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E5A797A92441FBDB00A63AC7 /* DiffingAlgorithm */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5A797BE2441FBDC00A63AC7 /* Build configuration list for PBXNativeTarget "DiffingAlgorithm" */;
@@ -97,6 +161,10 @@
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Ambar Septian";
 				TargetAttributes = {
+					E551B5D124464C4E003CF2D7 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = E5A797A92441FBDB00A63AC7;
+					};
 					E5A797A92441FBDB00A63AC7 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -116,45 +184,63 @@
 			projectRoot = "";
 			targets = (
 				E5A797A92441FBDB00A63AC7 /* DiffingAlgorithm */,
+				E551B5D124464C4E003CF2D7 /* DiffingAlgorithmTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E551B5D024464C4E003CF2D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5A797A82441FBDB00A63AC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E5A797BA2441FBDC00A63AC7 /* LaunchScreen.storyboard in Resources */,
 				E5A797B72441FBDC00A63AC7 /* Assets.xcassets in Resources */,
-				E5A797B52441FBDB00A63AC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E551B5CE24464C4E003CF2D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E551B5D524464C4E003CF2D7 /* DiffingAlgorithmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E5A797A62441FBDB00A63AC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A797C42441FC4900A63AC7 /* AnyDiffable.swift in Sources */,
+				E5A797C82441FC8D00A63AC7 /* UICollectionVIew+Diff.swift in Sources */,
 				E5A797B22441FBDB00A63AC7 /* ViewController.swift in Sources */,
 				E5A797AE2441FBDB00A63AC7 /* AppDelegate.swift in Sources */,
-				E5A797B02441FBDB00A63AC7 /* SceneDelegate.swift in Sources */,
+				E5A797C22441FC2B00A63AC7 /* Diff.swift in Sources */,
+				E5A797C62441FC6600A63AC7 /* Array+Diff.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E5A797B32441FBDB00A63AC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5A797B42441FBDB00A63AC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		E551B5D824464C4E003CF2D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5A797A92441FBDB00A63AC7 /* DiffingAlgorithm */;
+			targetProxy = E551B5D724464C4E003CF2D7 /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		E5A797B82441FBDC00A63AC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -166,6 +252,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E551B5D924464C4E003CF2D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79D36Y5DN3;
+				INFOPLIST_FILE = DiffingAlgorithmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tokopedia.DiffingAlgorithmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiffingAlgorithm.app/DiffingAlgorithm";
+			};
+			name = Debug;
+		};
+		E551B5DA24464C4E003CF2D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 79D36Y5DN3;
+				INFOPLIST_FILE = DiffingAlgorithmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tokopedia.DiffingAlgorithmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DiffingAlgorithm.app/DiffingAlgorithm";
+			};
+			name = Release;
+		};
 		E5A797BC2441FBDC00A63AC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -319,6 +445,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E551B5DB24464C4E003CF2D7 /* Build configuration list for PBXNativeTarget "DiffingAlgorithmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E551B5D924464C4E003CF2D7 /* Debug */,
+				E551B5DA24464C4E003CF2D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E5A797A52441FBDB00A63AC7 /* Build configuration list for PBXProject "DiffingAlgorithm" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
