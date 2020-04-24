@@ -38,7 +38,7 @@ class Diff {
         case pointer(Symbol)
         
         /// - index: An index reference. This is used to signify things which have not changed.
-        case index(Int)
+        case otherIndex(Int)
         
         /// A reference symbol.
         class Symbol {
@@ -58,6 +58,22 @@ class Diff {
                 return (oldCount == newCount && oldCount != .zero)
             }
             
+            var description: String {
+                return """
+                    oldCount: \(oldCount)
+                    newCount: \(newCount)
+                    oldLineReferenceIndexes: \(oldLineReferenceIndexes)
+                    inBoth: \(inBoth)
+                """
+            }
+            
+        }
+        
+        var convertSymbol: Reference.Symbol? {
+            if case .pointer(let asdf) = self {
+                return asdf
+            }
+            return nil
         }
         
         /// An enum representing zero, one or many
@@ -104,58 +120,25 @@ class Diff {
     /// - Returns: A list of DiffStep operations to perform on the old array to get the new array.
     func process<T: Diffable>(old: [T], new: [T]) -> [DiffStep<T>] {
         
-        setupContext(old: old, new: new)
+         /// First pass
+        newReferences = makeTableReferences(with: new, counter: { $0.newCount.next() })
+        
+        /// Second pass
+        oldReferences = makeTableReferences(with: old, updateLineReference: true, counter: { $0.oldCount.next() })
+        
+        /// If a line occurs only once in each file, then it must be the same line, although it may have been moved.
+        /// We use this observation to locate unaltered lines that we subsequently exclude from further treatment.
+        
+        /// Third pass
+        findUniqueVirtualEntries()
         
         /// Final pass
         ///
         /// one entry for each index in the new array containing either:
         /// > a pointer to table[line]
         /// > the entry index in the old array
-        
-        var steps = [DiffStep<T>]()
-        
-        var deleteOffsets = Array(repeating: 0, count: old.count)
-        var offset = 0
-        
-        for (index, item) in oldReferences.enumerated() {
-            
-            deleteOffsets[index] = offset
-            
-            if case .pointer(_) = item {
-                steps.append(.delete(index: index, value: old[index]))
-                offset += 1
-            }
-            
-        }
-        
-        offset = 0
-        
-        for (index, item) in newReferences.enumerated() {
-            
-            switch item {
-                
-            case .pointer(_):
-                
-                steps.append(.insert(index: index, value: new[index]))
-                offset += 1
-                
-            case .index(let oldIndex):
-                
-                if old[oldIndex] != new[index] {
-                    steps.append(.update(index: index, value: new[index]))
-                }
-                
-                let deleteOffset = deleteOffsets[oldIndex]
-                
-                if (oldIndex - deleteOffset + offset) != index {
-                    steps.append(.move(from: oldIndex, to: index, value: new[index]))
-                }
-                
-            }
-        }
-        
-        return steps
-     
+
+        return generateSteps(old: old, new: new)
     }
     
     /// Setup the context for the diffing operation
@@ -217,31 +200,7 @@ class Diff {
     /// - Parameters:
     ///   - old: The array to compare.
     ///   - new: The array to compare against.
-    private func setupContext<T: Diffable>(old: [T], new: [T]) {
-        
-        /// First pass
-        newReferences = makeTableReferences(with: new, counter: { $0.newCount.next() })
-        
-        /// Second pass
-        oldReferences = makeTableReferences(with: old, updateLineReference: true, counter: { $0.oldCount.next() })
-        
-        /// If a line occurs only once in each file, then it must be the same line, although it may have been moved.
-        /// We use this observation to locate unaltered lines that we subsequently exclude from further treatment.
-        
-        /// Third pass
-        findUniqueVirtualEntries()
-        
-        /// If a line has been found to be unaltered, and the lines immediately adjacent to it in both files are identical,
-        /// then these lines must be the same line. This information can be used to find blocks of unchanged lines.
-        
-        /// Fourth pass
-            expandUniqueEntries(direction: .ascending)
-//
-//        /// Fifth pass
-        expandUniqueEntries(direction: .descending)
 
-    }
-    
     private var table: [String: Reference.Symbol] = [:]
     
     /// Generate table entries for the array, if updateLineReference is true the oldLineReferenceIndexes are also populated.
@@ -256,6 +215,7 @@ class Diff {
     private func makeTableReferences<T: Diffable>(with array: [T], updateLineReference: Bool = false, counter: (Reference.Symbol) -> Void) -> [Reference] {
        
         var entries = [Reference]()
+        var asdf = [Reference.Symbol]()
         
         for (index, item) in array.enumerated() {
             
@@ -270,7 +230,7 @@ class Diff {
             }
             
             entries.append(.pointer(entry))
-            
+            asdf.append(entry)
         }
         
         return entries
@@ -290,8 +250,8 @@ class Diff {
                 
                 let oldIndex = entry.oldLineReferenceIndexes.removeFirst()
                 
-                newReferences[index]    = .index(oldIndex)
-                oldReferences[oldIndex] = .index(index)
+                newReferences[index]    = .otherIndex(oldIndex)
+                oldReferences[oldIndex] = .otherIndex(index)
                 
             }
             
@@ -299,123 +259,51 @@ class Diff {
         
     }
 
-    /// An enumeration to specify the direction of the traversal of references.
-    enum ReferenceWalker {
+
+    private func generateSteps<T>(old: [T], new:[T]) -> [DiffStep<T>] {
+        var steps = [DiffStep<T>]()
         
-        /// - ascending: Walk the references in ascending order.
-        case ascending
+        var deleteOffsets = Array(repeating: 0, count: old.count)
+        var offset = 0
         
-        /// - descending: Walk the references in decending order.
-        case descending
-        
-        /// The starting value of the walk.
-        ///
-        /// - Parameter references: The references which are being walked.
-        /// - Returns: The start index.
-        func start(references: [Reference]) -> Int {
+        for (index, item) in oldReferences.enumerated() {
             
-            switch self {
-            case .ascending:
-                return 1
-            case .descending:
-                return references.count - 1
-            }
+            deleteOffsets[index] = offset
             
-        }
-        
-        /// The step increase when walking references.
-        var step: Int {
-            switch self {
-            case .ascending:
-                return 1
-            case .descending:
-                return -1
+            if case .pointer(_) = item {
+                steps.append(.delete(index: index, value: old[index]))
+                offset += 1
             }
         }
         
-        /// Compare the index with the list of indexes to ensure it is valid.
-        ///
-        /// - Parameters:
-        ///   - i: the index to validate
-        ///   - references: The array of references, the count of these determines if the traversal is still valid.
-        /// - Returns: true if the traversal is still valid.
-        func isValid(i: Int, references: [Reference]) -> Bool {
+        offset = 0
+        
+        for (index, item) in newReferences.enumerated() {
             
-            switch self {
-            case .ascending:
-                return i < references.count - 1
-            case .descending:
-                return i > 0
-            }
-            
-        }
-        
-        /// Determine if the index is in range and can be continued.
-        ///
-        /// - Parameters:
-        ///   - i: the index to validate
-        ///   - references: The array of references, the count of these determines if the traversal is still valid.
-        /// - Returns: true if the index is in range.
-        func inRange(i: Int, references: [Reference]) -> Bool {
-            
-            switch self {
-            case .ascending:
-                return i + step < references.count
-            case .descending:
-                return i + step >= 0
-            }
-            
-        }
-        
-    }
-    
-    
-    /// Fourth & Fifth pass
-    ///
-    /// - Parameter direction: The direction to walk, ascending or descending
-    private func expandUniqueEntries(direction: ReferenceWalker) {
-        
-        var i = direction.start(references: newReferences)
-        print(">> \(direction) start \(i)")
-        
-//        while(i < NA.count-1) {
-//                if let j = NA[i].index, j+1 < OA.count {
-//                    if NA[i+1].symbol != nil && NA[i+1].symbol === OA[j+1].symbol {
-//                        NA[i+1] = .Index(j+1)
-//                        OA[j+1] = .Index(i+1)
-//                    }
-//                }
-//                i += 1
-//            }
-        
-        while direction.isValid(i: i, references: newReferences) {
-            print(">> i \(i)")
-            if case .index(let j) = newReferences[i] {
-                print(">> j \(j)")
-                    
+            switch item {
                 
-                if direction.inRange(i: j, references: oldReferences) {
-               
-                if case .pointer(let new) = newReferences[i + direction.step], case .pointer(let old) = oldReferences[j + direction.step], new === old {
-                    
-                    if direction == .descending {
-                        print(">> sdf")
-                    }
-                    
-                    newReferences[i + direction.step] = .index(j + direction.step)
-                    oldReferences[j + direction.step] = .index(i + direction.step)
-                    }
+            case .pointer(_):
+                
+                steps.append(.insert(index: index, value: new[index]))
+                offset += 1
+                
+            case .otherIndex(let oldIndex):
+                
+                if old[oldIndex] != new[index] {
+                    steps.append(.update(index: index, value: new[index]))
                 }
+                
+                let deleteOffset = deleteOffsets[oldIndex]
+                
+                if (oldIndex - deleteOffset + offset) != index {
+                    steps.append(.move(from: oldIndex, to: index, value: new[index]))
+                }
+                
             }
-            
-            i += direction.step
-//            print("\(direction) step \(i)")
-            
         }
         
+        return steps
     }
-
-
 }
 
 /// A description of a step to apply to an array to be able to transform one into the other.

@@ -11,42 +11,41 @@ import XCTest
 
 class DiffingAlgorithmTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testExample() {
+         let source = [
+            Alphabet(id: "0", char: "Alpha"),
+            Alphabet(id: "1", char: "Beta"),
+            Alphabet(id: "2", char: "Charlie"),
+            Alphabet(id: "3", char: "Delta"),
+         ]
+        let sink = [
+            Alphabet(id: "3", char: "Delta"),
+            Alphabet(id: "2", char: "Chocolate"),
+            Alphabet(id: "1", char: "Beta"),
+            Alphabet(id: "5", char: "Echo"),
+            Alphabet(id: "6", char: "Foxfort")
+         ]
+     
+         let diff = source.diff(sink)
+         XCTAssertEqual(diff.updates, [1])
+         XCTAssertEqual(diff.insertions, [3, 4])
+         XCTAssertEqual(diff.deletions, [0])
+         let expectedMoves = [(3, 0), (1,2)]
+         for (index, move) in diff.moves.enumerated() {
+             XCTAssertEqual(move.0, expectedMoves[index].0)
+             XCTAssertEqual(move.1, expectedMoves[index].1)
+         }
+     }
+}
+
+
+struct Alphabet {
+    let id: String
+    let char: String
+}
+
+extension Alphabet: Diffable {
+    var primaryKeyValue: String {
+        return id
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-//    func testExample() {
-//        let source = ["a", "b", "c", "c", "c"]
-//        let sink = ["e", "b", "c", "d", "a"]
-//    
-//        let diff = source.diff(sink)
-//        XCTAssertEqual(diff.updates, [])
-//        XCTAssertEqual(diff.insertions, [0, 3])
-//        XCTAssertEqual(diff.deletions, [3, 4])
-//        let expectedMoves = [(1, 1), (2,2), (0,4)]
-//        for (index, move) in diff.moves.enumerated() {
-//            XCTAssertEqual(move.0, expectedMoves[index].0)
-//            XCTAssertEqual(move.1, expectedMoves[index].1)
-//        }
-//    }
-
-   func testExample2() {
-        let source = ["a", "b", "c"]
-        let sink = ["e", "a", "b", "c", "c", "a"]
-    
-        let diff = source.diff(sink)
-        XCTAssertEqual(diff.updates, [])
-        XCTAssertEqual(diff.insertions, [0, 3])
-        XCTAssertEqual(diff.deletions, [3, 4])
-        let expectedMoves = [(1, 1), (2,2), (0,4)]
-        for (index, move) in diff.moves.enumerated() {
-            XCTAssertEqual(move.0, expectedMoves[index].0)
-            XCTAssertEqual(move.1, expectedMoves[index].1)
-        }
-    }
-
 }

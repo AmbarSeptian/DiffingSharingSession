@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E551B5D524464C4E003CF2D7 /* DiffingAlgorithmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E551B5D424464C4E003CF2D7 /* DiffingAlgorithmTests.swift */; };
 		E5A797AE2441FBDB00A63AC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */; };
-		E5A797B22441FBDB00A63AC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797B12441FBDB00A63AC7 /* ViewController.swift */; };
 		E5A797B72441FBDC00A63AC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A797B62441FBDC00A63AC7 /* Assets.xcassets */; };
 		E5A797BA2441FBDC00A63AC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A797B82441FBDC00A63AC7 /* LaunchScreen.storyboard */; };
 		E5A797C22441FC2B00A63AC7 /* Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A797C12441FC2B00A63AC7 /* Diff.swift */; };
@@ -34,7 +33,6 @@
 		E551B5D624464C4E003CF2D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A797AA2441FBDB00A63AC7 /* DiffingAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiffingAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5A797B12441FBDB00A63AC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E5A797B62441FBDC00A63AC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5A797B92441FBDC00A63AC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5A797BB2441FBDC00A63AC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 			children = (
 				E5A797AD2441FBDB00A63AC7 /* AppDelegate.swift */,
 				E5A797C92441FC9700A63AC7 /* Diff */,
-				E5A797B12441FBDB00A63AC7 /* ViewController.swift */,
 				E5A797B62441FBDC00A63AC7 /* Assets.xcassets */,
 				E5A797B82441FBDC00A63AC7 /* LaunchScreen.storyboard */,
 				E5A797BB2441FBDC00A63AC7 /* Info.plist */,
@@ -223,7 +220,6 @@
 			files = (
 				E5A797C42441FC4900A63AC7 /* AnyDiffable.swift in Sources */,
 				E5A797C82441FC8D00A63AC7 /* UICollectionVIew+Diff.swift in Sources */,
-				E5A797B22441FBDB00A63AC7 /* ViewController.swift in Sources */,
 				E5A797AE2441FBDB00A63AC7 /* AppDelegate.swift in Sources */,
 				E5A797C22441FC2B00A63AC7 /* Diff.swift in Sources */,
 				E5A797C62441FC6600A63AC7 /* Array+Diff.swift in Sources */,

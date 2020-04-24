@@ -7,15 +7,79 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C87BC864-98C2-405F-9768-5B7F24CB5E0E"
+            uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiffingAlgorithm/Diff/Diff.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "process(old:new:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6 - d4299b7f782991be"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "DiffingAlgorithm.Diff.process&lt;A where A: DiffingAlgorithm.Diffable&gt;(old: Swift.Array&lt;A&gt;, new: Swift.Array&lt;A&gt;) -&gt; Swift.Array&lt;DiffingAlgorithm.DiffStep&lt;A&gt;&gt;"
+                  moduleName = "DiffingAlgorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nakama/Documents/DiffingAlgorithm/DiffingAlgorithm/Diff/Diff.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "267">
+               </Location>
+               <Location
+                  uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6 - 6f9df6912476175"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (DiffingAlgorithm.Diff.Reference.Symbol) -&gt; () in DiffingAlgorithm.Diff.process&lt;A where A: DiffingAlgorithm.Diffable&gt;(old: Swift.Array&lt;A&gt;, new: Swift.Array&lt;A&gt;) -&gt; Swift.Array&lt;DiffingAlgorithm.DiffStep&lt;A&gt;&gt;"
+                  moduleName = "DiffingAlgorithm"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nakama/Documents/DiffingAlgorithm/DiffingAlgorithm/Diff/Diff.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B6C1BEB-2302-40DA-ABC8-FDFADF4AA46A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiffingAlgorithm/Diff/Diff.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "makeTableReferences(with:updateLineReference:counter:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D8CDF191-C9AB-48A2-BF0B-D2C5E8E63E88"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DiffingAlgorithm/Diff/Diff.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "findUniqueVirtualEntries()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,64 +87,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "864E6D09-AFF6-4A4A-A36B-E30B4FA29AB6"
+            uuid = "6D1F816F-4E73-48F2-9E86-40AEEBE31892"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DiffingAlgorithm/Diff/Diff.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
-            landmarkName = "expandUniqueEntries(direction:)"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "generateSteps(old:new:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "127F578A-48D3-4B1D-83DE-5008A836D54B"
+            uuid = "024001AE-B795-4BEC-AA50-C5D8541FE87A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DiffingAlgorithm/Diff/Diff.swift"
+            filePath = "DiffingAlgorithm/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
-            landmarkName = "expandUniqueEntries(direction:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "refresh()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "18C936E6-0916-4FFE-B17C-5E796818ABD2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiffingAlgorithm/Diff/Diff.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "403"
-            endingLineNumber = "403"
-            landmarkName = "expandUniqueEntries(direction:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6E67FCC6-046A-4B75-A08F-1FFD442069DC"
+            uuid = "A0C3DC06-626E-49E3-BC97-CAFF2360687F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DiffingAlgorithmTests/DiffingAlgorithmTests.swift"
+            filePath = "DiffingAlgorithm/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "testExample2()"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "refresh()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
