@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiffingAlgorithm/Diff/Diff.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "process(old:new:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6 - d4299b7f782991be"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "DiffingAlgorithm.Diff.process&lt;A where A: DiffingAlgorithm.Diffable&gt;(old: Swift.Array&lt;A&gt;, new: Swift.Array&lt;A&gt;) -&gt; Swift.Array&lt;DiffingAlgorithm.DiffStep&lt;A&gt;&gt;"
-                  moduleName = "DiffingAlgorithm"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nakama/Documents/DiffingAlgorithm/DiffingAlgorithm/Diff/Diff.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "267">
-               </Location>
-               <Location
-                  uuid = "65A60A3E-7FED-42C9-9436-6C0152A95DC6 - 6f9df6912476175"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (DiffingAlgorithm.Diff.Reference.Symbol) -&gt; () in DiffingAlgorithm.Diff.process&lt;A where A: DiffingAlgorithm.Diffable&gt;(old: Swift.Array&lt;A&gt;, new: Swift.Array&lt;A&gt;) -&gt; Swift.Array&lt;DiffingAlgorithm.DiffStep&lt;A&gt;&gt;"
-                  moduleName = "DiffingAlgorithm"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nakama/Documents/DiffingAlgorithm/DiffingAlgorithm/Diff/Diff.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "22">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B6C1BEB-2302-40DA-ABC8-FDFADF4AA46A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DiffingAlgorithm/Diff/Diff.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
-            landmarkName = "makeTableReferences(with:updateLineReference:counter:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D8CDF191-C9AB-48A2-BF0B-D2C5E8E63E88"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -78,8 +14,8 @@
             filePath = "DiffingAlgorithm/Diff/Diff.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "findUniqueVirtualEntries()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +30,8 @@
             filePath = "DiffingAlgorithm/Diff/Diff.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "generateSteps(old:new:)"
             landmarkType = "7">
          </BreakpointContent>

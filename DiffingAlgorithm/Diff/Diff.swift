@@ -215,7 +215,6 @@ class Diff {
     private func makeTableReferences<T: Diffable>(with array: [T], updateLineReference: Bool = false, counter: (Reference.Symbol) -> Void) -> [Reference] {
        
         var entries = [Reference]()
-        var asdf = [Reference.Symbol]()
         
         for (index, item) in array.enumerated() {
             
@@ -230,7 +229,6 @@ class Diff {
             }
             
             entries.append(.pointer(entry))
-            asdf.append(entry)
         }
         
         return entries
@@ -287,16 +285,16 @@ class Diff {
                 steps.append(.insert(index: index, value: new[index]))
                 offset += 1
                 
-            case .otherIndex(let oldIndex):
+            case .otherIndex(let otherIndex):
                 
-                if old[oldIndex] != new[index] {
+                if old[otherIndex] != new[index] {
                     steps.append(.update(index: index, value: new[index]))
                 }
                 
-                let deleteOffset = deleteOffsets[oldIndex]
+                let deleteOffset = deleteOffsets[otherIndex]
                 
-                if (oldIndex - deleteOffset + offset) != index {
-                    steps.append(.move(from: oldIndex, to: index, value: new[index]))
+                if (otherIndex - deleteOffset + offset) != index {
+                    steps.append(.move(from: otherIndex, to: index, value: new[index]))
                 }
                 
             }

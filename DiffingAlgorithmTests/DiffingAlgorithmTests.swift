@@ -12,21 +12,22 @@ import XCTest
 class DiffingAlgorithmTests: XCTestCase {
 
     func testExample() {
-         let source = [
+         let old = [
             Alphabet(id: "0", char: "Alpha"),
             Alphabet(id: "1", char: "Beta"),
             Alphabet(id: "2", char: "Charlie"),
             Alphabet(id: "3", char: "Delta"),
          ]
-        let sink = [
+        let new = [
             Alphabet(id: "3", char: "Delta"),
-            Alphabet(id: "2", char: "Chocolate"),
+            Alphabet(id: "2", char: "Chocolate"), // updates
             Alphabet(id: "1", char: "Beta"),
             Alphabet(id: "5", char: "Echo"),
             Alphabet(id: "6", char: "Foxfort")
          ]
      
-         let diff = source.diff(sink)
+         let diff = old.diff(new)
+        
          XCTAssertEqual(diff.updates, [1])
          XCTAssertEqual(diff.insertions, [3, 4])
          XCTAssertEqual(diff.deletions, [0])
